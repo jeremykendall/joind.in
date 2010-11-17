@@ -14,7 +14,7 @@ class UserGetDetail extends ApiTestBase {
 		}
 
 		public function testGetDetailByUsernameJSON() {
-			$response = self::makeApiRequest('user', 'getdetail', array('uid'=>'lornajane'), 'json');
+			$response = self::makeApiRequest('user', 'getdetail', array('uid'=>'johndoe'), 'json');
 
 			$res = $this->decode_response($response, 'json');
 			$this->assertTrue( $res !== null, "Could not decode JSON response");
@@ -22,7 +22,7 @@ class UserGetDetail extends ApiTestBase {
 		}
 
 		public function testGetDetailByUsernameXML() {
-			$response = self::makeApiRequest('user', 'getdetail', array('uid'=>'lornajane'), 'xml');
+			$response = self::makeApiRequest('user', 'getdetail', array('uid'=>'johndoe'), 'xml');
 
 			$res = $this->decode_response($response, 'xml');
 			$this->assertTrue( $res !== null, "Could not decode XML response");
@@ -30,7 +30,7 @@ class UserGetDetail extends ApiTestBase {
 		}
 
 		public function testGetDetailByUserIDXML() {
-			$response = self::makeApiRequest('user', 'getdetail', array('uid'=>'110'), 'xml');
+			$response = self::makeApiRequest('user', 'getdetail', array('uid'=>'1'), 'xml');
 
 			$res = $this->decode_response($response, 'xml');
 			$this->assertTrue( $res !== null, "Could not decode XML response");
@@ -38,7 +38,7 @@ class UserGetDetail extends ApiTestBase {
 		}
 
 		public function testGetDetailByUserIDJSON() {
-			$response = self::makeApiRequest('user', 'getdetail', array('uid'=>'110'), 'json');
+			$response = self::makeApiRequest('user', 'getdetail', array('uid'=>'1'), 'json');
 
 			$res = $this->decode_response($response, 'json');
 			$this->assertTrue( $res !== null, "Could not decode JSON response");

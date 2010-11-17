@@ -9,7 +9,12 @@
 
 		protected function makeApiRequest( $type, $action, $params, $format=null, $creds=null, $useCache=true ) {
 			// TODO pull this from config
-			$url = "http://lorna.rivendell.local/api/".urlencode($type);
+
+            $url = null;
+
+            $this->assertNotNull($url, 'Please set $url in ApiTestBase::makeApiRequest() to your joind.in dev installation base url.');
+
+			$url .= '/api/'.urlencode($type);
 
 			$useCache = false;
 
